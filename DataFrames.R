@@ -21,3 +21,6 @@ mean(df_teste$idade)
 
 #Valor mínimo
 min(df_teste$idade)
+
+# Função que registra a frequência daquele dado
+hist(df_teste$idade)
