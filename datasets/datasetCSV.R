@@ -58,3 +58,7 @@ aggregate(cpu ~ user, data = df_grupo, FUN = mean)
 #Ver depois como se remove
 #rm(df_grupo$alerta)
 
+#Valores máximos
+df_grupo[which.max(df_grupo$cpu),]
+df_grupo[which.max(df_grupo$ram > 50),]
+
