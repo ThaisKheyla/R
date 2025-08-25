@@ -32,6 +32,7 @@ df_grupo[,1]
 
 #Filtrando linhas
 df_grupo[df_grupo$cpu < 50,]
+df_grupo <- ifelse(df_grupo$ram < 50, "cuidado" , "de boa")
 
 #Filtrando colunas, quando queira trazer colunas especifícas
 df_grupo[,c("ram", "cpu")]
@@ -55,8 +56,8 @@ media_ram_marina <-
 
 aggregate(cpu ~ user, data = df_grupo, FUN = mean)
 
-#Ver depois como se remove
-#rm(df_grupo$alerta)
+#Removendo uma coluna
+df_grupo$alerta <- NULL
 
 #Valores máximos
 df_grupo[which.max(df_grupo$cpu),]
